@@ -11,8 +11,8 @@ import { FiShoppingBag } from "react-icons/fi";
 const About = () => {
     return (
         <div id="about" className="relative py-40 flex w-full min-h-[100vh]">
-            <img className="absolute hidden lg:block right-0 bottom-[20%]" src={bellPaper} alt="" />
-            <div className="flex flex-col w-[75%] mx-auto">
+            <img className="absolute max-w-36 hidden lg:block right-0 bottom-[20%]" src={bellPaper} alt="" />
+            <div className="flex flex-col w-[81.25%]  lg:w-[75%] mx-auto">
                 <div className="flex flex-col lg:flex-row">
                     <div className="relative lg:w-[50%] my-auto">
                         <img className="absolute top-4" src={market} alt="" />
@@ -29,7 +29,7 @@ const About = () => {
 
                             <TabPanel>
                                 <div>
-                                    <h2 className="font-bold pb-3 text-4xl">Exceptional culinary<br /> experience and delicious food</h2>
+                                    <h2 className="font-bold pb-3 text-5xl">Exceptional culinary<br /> experience and delicious food</h2>
                                     <p className="text-base font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare non sed est cursus. Vel hac convallis ipsum, facilisi odio pellentesque bibendum viverra tempus. Lorem ipsum dolor sit amet consectetur adipiscing elit do eiusmod tempor incididunt ut labore et dolore magna minim veniam nostrud exercitation.</p>
                                 </div>
                                 <div className="flex flex-row mt-8">
@@ -43,7 +43,7 @@ const About = () => {
                             </TabPanel>
                             <TabPanel>
                                 <div>
-                                    <h2 className="font-bold pb-3 text-4xl">Professional Experience<br /> in Authentic Saudi Cuisine</h2>
+                                    <h2 className="font-bold pb-3 text-5xl">Professional Experience<br /> in Authentic Saudi Cuisine</h2>
                                     <p className="text-base font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare non sed est cursus. Vel hac convallis ipsum, facilisi odio pellentesque bibendum viverra tempus. Lorem ipsum dolor sit amet consectetur adipiscing elit do eiusmod tempor incididunt ut labore et dolore magna minim veniam nostrud exercitation.</p>
                                 </div>
                                 <div className="flex flex-row mt-8">
@@ -57,7 +57,7 @@ const About = () => {
                             </TabPanel>
                             <TabPanel>
                                 <div>
-                                    <h2 className="font-bold pb-3 text-4xl">Get in Touch<br /> for an excuisite Experience</h2>
+                                    <h2 className="font-bold pb-3 text-5xl">Get in Touch<br /> for an excuisite Experience</h2>
                                     <p className="text-base font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare non sed est cursus. Vel hac convallis ipsum, facilisi odio pellentesque bibendum viverra tempus. Lorem ipsum dolor sit amet consectetur adipiscing elit do eiusmod tempor incididunt ut labore et dolore magna minim veniam nostrud exercitation.</p>
                                 </div>
                                 <div className="flex flex-row mt-8">

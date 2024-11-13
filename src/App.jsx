@@ -1,5 +1,6 @@
 import './App.css'
 import About from './components/About'
+import Client from './components/Client'
 import Footer from './components/Footer'
 import Form from './components/Form'
 import Header from './components/Header'
@@ -15,6 +16,7 @@ function App() {
       <About></About>
       <Portfolio></Portfolio>
       <Form></Form>
+      <Client></Client>
       
 
       <Footer></Footer>

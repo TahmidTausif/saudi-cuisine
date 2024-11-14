@@ -39,7 +39,7 @@ const Form = () => {
     useEffect(() => {
         AOS.init(
             {
-                offset: 100,
+                offset: 0,
                 duration: 1500,
                 easing: 'ease-out-quint',
                 delay: 20,

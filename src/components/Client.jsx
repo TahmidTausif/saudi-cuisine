@@ -21,11 +21,19 @@ import ReactPlayer from "react-player";
 
 
 const Client = () => {
-    const [showPlayer, setShowPlayer] = useState(false);
+    const [activeVideo, setActiveVideo] = useState(null); // Track the currently active video
+    const [swiperInstance, setSwiperInstance] = useState(null); // Store Swiper instance
 
-    const handleChange = () => {
-        setShowPlayer(!showPlayer)
-    }
+    const handleVideoToggle = (index) => {
+        if (activeVideo === index) {
+            setActiveVideo(null); // Stop the video
+            if (swiperInstance) swiperInstance.autoplay.start(); // Restart autoplay when video is closed
+        } else {
+            setActiveVideo(index); // Start the video
+            if (swiperInstance) swiperInstance.autoplay.stop(); // Stop autoplay when video is playing
+        }
+    };
+
 
     const swiper = useSwiper()
     return (
@@ -55,6 +63,7 @@ const Client = () => {
                         modules={[Navigation, Autoplay]}
                         loop={true}
                         className="mySwiper"
+                        onSwiper={setSwiperInstance} 
                         navigation={{
                             nextEl: '.swiper-next-button',
                             prevEl: '.swiper-prev-button'
@@ -62,21 +71,22 @@ const Client = () => {
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
                         }}
 
                     >
                         <SwiperSlide>
                             <div className="flex flex-col md:flex-row-reverse w-full">
-                            <div style={!showPlayer ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
-                                    {!showPlayer ? <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
+                            <div style={activeVideo !== 0 ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
+                                    {activeVideo !== 0 ? <div>
+                                        <button onClick={() => handleVideoToggle(0)} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
                                     </div> : <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
+                                        <button onClick={() => handleVideoToggle(0)} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
                                     </div>}
-                                    {showPlayer && (
+                                    {activeVideo === 0 && (
                                         <div className="video-player w-full h-full">
                                             <ReactPlayer
-                                                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                                url="https://www.youtube.com/watch?v=1fVwoquZuU4"
                                                 controls={true} // Show play/pause controls
                                                 playing={true} // Automatically play when shown
                                                 width="100%" // Customize width and height
@@ -108,13 +118,13 @@ const Client = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="flex flex-col md:flex-row-reverse w-full">
-                            <div style={!showPlayer ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
-                                    {!showPlayer ? <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
+                            <div style={activeVideo !== 1 ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
+                                    {activeVideo !== 1 ? <div>
+                                        <button onClick={()=>{handleVideoToggle(1)}} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
                                     </div> : <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
+                                        <button onClick={()=>handleVideoToggle(1)} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
                                     </div>}
-                                    {showPlayer && (
+                                    {activeVideo === 1 && (
                                         <div className="video-player w-full h-full">
                                             <ReactPlayer
                                                 url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -149,16 +159,16 @@ const Client = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="flex flex-col md:flex-row-reverse w-full">
-                            <div style={!showPlayer ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
-                                    {!showPlayer ? <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
+                            <div style={activeVideo !== 2 ? { backgroundImage: `url(${mutton}` } : {}} className="relative h-[50vh] md:h-[570px] w-full md:w-[50%] bg-cover bg-center">
+                                    {activeVideo !== 2 ? <div>
+                                        <button onClick={()=>{handleVideoToggle(2)}} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><TbPlayerPlayFilled className="text-2xl" /></button>
                                     </div> : <div>
-                                        <button onClick={handleChange} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
+                                        <button onClick={()=>{handleVideoToggle(2)}} className="bg-yellow-400 rounded-full p-4 absolute left-[45%] opacity-50 hover:opacity-100 hover:scale-125 transition ease-in-out delay-150 top-[45%]"><IoClose className="text-2xl" /></button>
                                     </div>}
-                                    {showPlayer && (
+                                    {activeVideo === 2 && (
                                         <div className="video-player w-full h-full">
                                             <ReactPlayer
-                                                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                                url="https://www.youtube.com/shorts/3Lgh-Ftlji0"
                                                 controls={true} // Show play/pause controls
                                                 playing={true} // Automatically play when shown
                                                 width="100%" // Customize width and height

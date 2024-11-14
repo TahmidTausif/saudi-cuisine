@@ -39,7 +39,7 @@ const Client = () => {
     return (
 
 
-        <div className="bg-[#FBF7F2] relative w-full lg:min-h-[100vh]">
+        <div id="client" className="bg-[#FBF7F2] relative w-full lg:min-h-[100vh]">
             <img className="absolute hidden lg:block max-w-44 left-0 top-[15%]" src={tomato} alt="" />
             <img className="absolute hidden lg:block max-w-80 right-0 bottom-[15%]" src={leaf} alt="" />
 
@@ -50,7 +50,7 @@ const Client = () => {
                         <span className="bg-red-800 w-3 h-3 inline-block mr-3"></span>
                         <p className="text-xl font-bold text-red-800">Crispy, Every Bite Taste</p>
                     </div>
-                    <h2 className="text-6xl font-bold">POPULAR FOOD ITEMS</h2>
+                    <h2 className="text-6xl font-bold">What Some of my Customers Say</h2>
                 </div>
                 <div className="hidden lg:flex items-center py-4 justify-center lg:justify-end gap-8">
                     <button className="swiper-next-button p-4 rounded-full shadow-[0_0_13.64px_0_rgba(0,0,0,0.1)]"><GrFormPrevious className="text-black hover:text-red-800 text-3xl" /></button>

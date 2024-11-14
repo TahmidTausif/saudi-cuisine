@@ -38,7 +38,7 @@ const Form = () => {
 
 
     return (
-        <div id="home" style={{ backgroundImage: `url(${plate})` }} className="bg-cover bg-center lg:bg-left-top flex w-full min-h-[100vh]">
+        <div id="form" style={{ backgroundImage: `url(${plate})` }} className="bg-cover bg-center lg:bg-left-top flex w-full min-h-[100vh]">
             <Toaster />
             <div className="w-[81.25%] lg:w-[75%] py-20 mx-auto">
                 <div className="md:w-[50%] flex flex-col">

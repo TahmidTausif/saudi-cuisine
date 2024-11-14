@@ -12,7 +12,7 @@ const Hero = () => {
                     </div>
                     <div className="mb-10">
                         <p className="text-white 2xl:text-2xl text-lg py-8">Among the best Saudi chefs in the world, serving<br /> you something beyond flavor.</p>
-                        <a href="#contact" className="pt-3 text-lg bg-yellow-400 px-6 py-4 uppercase font-bold hover:bg-transparent hover:text-yellow-400 border-2 border-yellow-400">explore menu</a>
+                        <a href="#portfolio" className="pt-3 text-lg bg-yellow-400 px-6 py-4 uppercase font-bold hover:bg-transparent hover:text-yellow-400 border-2 border-yellow-400">explore menu</a>
                     </div>
                 </div>
                 <div className="lg:w-[50%] grow">

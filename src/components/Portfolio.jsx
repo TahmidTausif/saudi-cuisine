@@ -16,7 +16,7 @@ const Portfolio = () => {
 
     const swiper = useSwiper()
     return (
-        <div className="bg-[#FBF7F2] relative w-full lg:min-h-[100vh]">
+        <div id="portfolio" className="bg-[#FBF7F2] relative w-full lg:min-h-[100vh]">
             <img className="absolute max-w-44 hidden lg:block left-0 bottom-[25%]" src={yellow} alt="" />
             <div className="lg:w-[75%] w-[81.25%] py-20 lg:py-40 grid gap-4 grid-cols-1 lg:grid-cols-4 mx-auto">
 

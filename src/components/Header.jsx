@@ -43,7 +43,7 @@ const Header = () => {
                             <li><a href="#about" className="text-white font-light">About</a></li>
                             <li><a href="#portfolio" className="text-white font-light">Portfolio</a></li>
                             <li><a href="#client" className="text-white font-light">Client</a></li>
-                            <li><a href="#blog" className="text-white font-light">Blog</a></li>
+                            <li><a href="#about" className="text-white font-light">Blog</a></li>
                             <li><a href="#contact" className="text-white font-light">Contact</a></li>
 
                         </ul>
@@ -61,13 +61,13 @@ const Header = () => {
                             <li><a href="#about" className="text-red-800 font-normal">About</a></li>
                             <li><a href="#portfolio" className="text-red-800 font-normal">Portfolio</a></li>
                             <li><a href="#client" className="text-red-800 font-normal">Client</a></li>
-                            <li><a href="#blog" className="text-red-800 font-normal">Blog</a></li>
+                            <li><a href="#about" className="text-red-800 font-normal">Blog</a></li>
                             <li><a href="#contact" className="text-red-800 font-normal">Contact</a></li>
-                            <li><a href="#contact" className="pt-3 text-base bg-yellow-400 px-3 py-2 uppercase font-bold hover:bg-white hover:text-yellow-400 border-2 border-yellow-400">Book a Table</a></li>
+                            <li><a href="#form" className="pt-3 text-base bg-yellow-400 px-3 py-2 uppercase font-bold hover:bg-white hover:text-yellow-400 border-2 border-yellow-400">Book a Table</a></li>
                         </ul>
 
                     </div>
-                    <a href="#contact" className={navbar ? "mt-2 hidden lg:block text-lg bg-yellow-400 px-6 py-2 uppercase font-bold hover:bg-red-800 hover:text-yellow-400 border-2 border-yellow-400" : "mt-2 hidden lg:block text-lg bg-yellow-400 px-6 py-2 uppercase font-bold hover:bg-transparent hover:text-yellow-400 border-2 border-yellow-400"}>Book a Table</a>
+                    <a href="#form" className={navbar ? "mt-2 hidden lg:block text-lg bg-yellow-400 px-6 py-2 uppercase font-bold hover:bg-red-800 hover:text-yellow-400 border-2 border-yellow-400" : "mt-2 hidden lg:block text-lg bg-yellow-400 px-6 py-2 uppercase font-bold hover:bg-transparent hover:text-yellow-400 border-2 border-yellow-400"}>Book a Table</a>
                 </div>
             </div>
         </div>

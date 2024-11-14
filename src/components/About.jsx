@@ -7,19 +7,32 @@ import { FiPhoneCall } from "react-icons/fi";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaAward } from "react-icons/fa6";
 import { FiShoppingBag } from "react-icons/fi";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const About = () => {
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 100,
+                duration: 1500,
+                easing: 'ease-out-quint',
+                delay: 20,
+              }
+        );
+      }, [])
     return (
         <div id="about" className="relative py-40 flex w-full min-h-[100vh]">
             <img className="absolute max-w-36 hidden lg:block right-0 bottom-[20%]" src={bellPaper} alt="" />
             <div className="flex flex-col w-[81.25%]  lg:w-[75%] mx-auto">
-                <div className="flex flex-col lg:flex-row">
-                    <div className="relative lg:w-[50%] my-auto">
+                <div  className="flex flex-col lg:flex-row">
+                    <div data-aos="fade-right" className="relative lg:w-[50%] my-auto">
                         <img className="absolute top-4" src={market} alt="" />
                         <img className="lg:w-[92%]" src={burger} alt="" />
                     </div>
                     <div className="lg:w-[50%]">
-                        <Tabs id="controlled-tabs" selectedTabClassName="bg-red-800 border-b-2 text-white">
+                        <Tabs data-aos="fade-left" id="controlled-tabs" selectedTabClassName="bg-red-800 border-b-2 text-white">
                             <TabList className="my-6 flex sm:flex-row sm:items-center ">
                                 <Tab className="cursor-pointer px-6 py-1 border-b-2 border-red-800 flex">About</Tab>
                                 <Tab className="cursor-pointer px-6 py-1 border-b-2 border-red-800 flex">Experience</Tab>
@@ -75,7 +88,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="mt-14 flex flex-col lg:flex-row justify-between gap-4">
-                    <div className="flex flex-row">
+                    <div data-aos="fade-up-right" data-aos-delay="100" className="flex flex-row">
                         <div className="flex items-center justify-center w-24 h-24  rounded-full shadow-lg">
                             <BsBoxSeam className=" text-red-800 text-5xl" />
                         </div>
@@ -84,7 +97,7 @@ const About = () => {
                             <p className="text-lg font-light">Within 30 minutes</p>
                         </div>
                     </div>
-                    <div className="flex flex-row">
+                    <div data-aos="fade-up" data-aos-delay="150" className="flex flex-row">
                         <div className="flex items-center justify-center w-24 h-24  rounded-full shadow-lg">
                             <FaAward className=" text-red-800 text-5xl" />
                         </div>
@@ -93,7 +106,7 @@ const About = () => {
                             <p className="text-lg font-light">Best buffet restaurant</p>
                         </div>
                     </div>
-                    <div className="flex flex-row">
+                    <div data-aos="fade-up-left" data-aos-delay="100" className="flex flex-row">
                         <div className="flex items-center justify-center w-24 h-24  rounded-full shadow-lg">
                             <FiShoppingBag className=" text-red-800 text-5xl" />
                         </div>

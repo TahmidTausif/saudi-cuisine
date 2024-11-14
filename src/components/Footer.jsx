@@ -7,17 +7,29 @@ import { FaFacebook } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Footer = () => {
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 100,
+                duration: 1500,
+                easing: 'ease-out-quint',
+                delay: 20,
+              }
+        );
+      }, [])
     return (
         <div id="contact" style={{ backgroundImage: `url(${restaurent})` }} className="bg-cover bg-center relative lg:min-h-[100vh]">
             <div className="absolute bg-black inset-0 h-full w-full brightness-[.25] bg-opacity-65"></div>
             <div className="flex flex-col relative py-20 lg:pt-36 lg:w-[75%] w-[81.25%] mx-auto z-10 ">
-                <div className="mx-auto">
+                <div data-aos="fade-up" className="mx-auto">
                     <h1 className="font-bold text-center text-5xl text-white">We ready to have you the best dining experiences</h1>
                 </div>
-                <div className="mt-12 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <div data-aos="fade-up" data-aos-delay="200" className="mt-12 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                     <div className="flex flex-col text-center justify-center items-center">
                         <WiTime4 className="text-3xl mb-4 text-yellow-400 font-bold" />
                         <h3 className="font-bold text-2xl mb-2 text-white">Opening hours</h3>
@@ -42,7 +54,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="w-full mt-20">
-                    <div className="lg:w-[50%]  mx-auto">
+                    <div data-aos="fade-up" data-aos-delay="300" className="lg:w-[50%]  mx-auto">
                         <div className="grid grid-cols-4 gap-4 pb-5 place-self-center justify-center">
                             <a className="rounded-full bg-transparent border-white border-2 p-4">
                                 <FaFacebook className="text-white text-2xl" />

@@ -1,7 +1,7 @@
 import { useSwiper } from "swiper/react";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -10,9 +10,20 @@ import pizza from "../assets/images/pizza.png"
 import fries from "../assets/images/french-fries.png"
 import shrimp from "../assets/images/fried-shrimp.png"
 import yellow from "../assets/images/yellow-capsicum.png"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Portfolio = () => {
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 100,
+                duration: 1500,
+                easing: 'ease-out-quint',
+                delay: 20,
+              }
+        );
+      }, [])
 
     const swiper = useSwiper()
     return (
@@ -21,18 +32,18 @@ const Portfolio = () => {
             <div className="lg:w-[75%] w-[81.25%] py-20 lg:py-40 grid gap-4 grid-cols-1 lg:grid-cols-4 mx-auto">
 
                 <div className="lg:col-span-3">
-                    <div className="flex mb-3 flex-row items-center">
+                    <div data-aos="fade-right" className="flex mb-3 flex-row items-center">
                         <span className="bg-red-800 w-3 h-3 inline-block mr-3"></span>
                         <p className="text-xl font-bold text-red-800">Crispy, Every Bite Taste</p>
                     </div>
-                    <h2 className="text-6xl font-bold">POPULAR FOOD ITEMS</h2>
+                    <h2 data-aos="fade-right" data-aos-delay="100" className="text-6xl font-bold">POPULAR FOOD ITEMS</h2>
                 </div>
-                <div className="hidden lg:flex items-center py-4 justify-center lg:justify-end gap-8">
+                <div data-aos="fade-left" className="hidden lg:flex items-center py-4 justify-center lg:justify-end gap-8">
                     <button className="swiper-next-button p-4 rounded-full shadow-[0_0_13.64px_0_rgba(0,0,0,0.1)]"><GrFormPrevious className="text-black active:text-red-800 text-3xl" /></button>
                     <button className="swiper-prev-button p-4 rounded-full shadow-[0_0_13.64px_0_rgba(0,0,0,0.1)]"><GrFormNext className="text-black active:text-red-800 text-3xl" /></button>
                 </div>
 
-                <div className="lg:col-span-4 w-full mt-10 lg:mt-20">
+                <div data-aos="fade-up" data-aos-delay="200" className="lg:col-span-4 w-full mt-10 lg:mt-20">
 
                     <Swiper
                         modules={[Navigation, Autoplay]}
@@ -131,7 +142,7 @@ const Portfolio = () => {
 
                     </Swiper>
                 </div>
-                <div className="flex lg:hidden items-center py-4 justify-center lg:justify-end gap-8">
+                <div data-aos="fade-up" data-aos-delay="250" className="flex lg:hidden items-center py-4 justify-center lg:justify-end gap-8">
                     <button className="swiper-next-button p-4 rounded-full shadow-[0_0_13.64px_0_rgba(0,0,0,0.1)]"><GrFormPrevious className="text-black active:text-red-800 text-3xl" /></button>
                     <button className="swiper-prev-button p-4 rounded-full shadow-[0_0_13.64px_0_rgba(0,0,0,0.1)]"><GrFormNext className="text-black active:text-red-800 text-3xl" /></button>
                 </div>

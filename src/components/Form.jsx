@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import plate from "../assets/images/plate.jpg"
 import toast, { Toaster } from "react-hot-toast";
 import { LuCalendarDays } from "react-icons/lu";
 import { TbTriangle, TbTriangleInverted } from "react-icons/tb";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Form = () => {
     const [formData, setFormData] = useState(null)
     const [number, setNumber] = useState('');
@@ -35,24 +36,33 @@ const Form = () => {
 
     }
 
-
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 100,
+                duration: 1500,
+                easing: 'ease-out-quint',
+                delay: 20,
+              }
+        );
+      }, [])
 
     return (
         <div id="form" style={{ backgroundImage: `url(${plate})` }} className="bg-cover bg-center lg:bg-left-top flex w-full min-h-[100vh]">
             <Toaster />
             <div className="w-[81.25%] lg:w-[75%] py-20 mx-auto">
-                <div className="md:w-[50%] flex flex-col">
+                <div  className="md:w-[50%] flex flex-col">
 
                     <div className="">
-                        <div className="flex mb-4 flex-row items-center">
+                        <div data-aos="fade-right" className="flex mb-4 flex-row items-center">
                             <span className="bg-red-700 w-3 h-3 inline-block mr-3"></span>
                             <p className="text-xl font-bold text-red-700">Book Now</p>
                         </div>
-                        <h2 className="text-6xl text-white font-bold">Book Your Table</h2>
-                        <p className="text-white my-4">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
+                        <h2 data-aos="fade-right" data-aos-delay="100" className="text-6xl text-white font-bold">Book Your Table</h2>
+                        <p data-aos="fade-right" data-aos-delay="200" className="text-white my-4">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
                     </div>
 
-                    <div className="">
+                    <div data-aos="fade-right" data-aos-delay="300" className="">
                         <form onSubmit={handleChange} className="max-w-lg py-4">
 
                             <div className="grid grid-cols-1 gap-6 md:gap-4 md:grid-cols-2 ">

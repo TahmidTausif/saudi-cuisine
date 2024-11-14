@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/images/Group.png"
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
@@ -30,10 +32,20 @@ const Header = () => {
 
     window.addEventListener('scroll', bgChange)
 
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 300,
+                duration: 1500,
+                easing: 'ease-out-quint',
+                delay: 20,
+              }
+        );
+      }, [])
 
     return (
         <div className={navbar ? "fixed z-50 top-0 py-3 bg-red-800 w-full delay-75" : "fixed z-10 top-0 bg-transparent w-full"}>
-            <div className={navbar ? "navbar z-50 bg-red-800 sticky max-w-[75%] mx-auto delay-75" : "navbar z-10 bg-transparent sticky max-w-[75%] mx-auto"}>
+            <div data-aos="fade-down" className={navbar ? "navbar z-50 bg-red-800 sticky max-w-[75%] mx-auto delay-75" : "navbar z-10 bg-transparent sticky max-w-[75%] mx-auto"}>
                 <div className="navbar-start w-full">
 
                     <a href="#" className="flex flex-row gap-2 text-white text-4xl"><img src={logo} alt="" />Restaurent</a>

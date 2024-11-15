@@ -54,7 +54,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="w-full mt-20">
-                    <div data-aos="fade-up" data-aos-delay="300" className="lg:w-[50%]  mx-auto">
+                    <div className="lg:w-[50%]  mx-auto">
                         <div className="grid grid-cols-4 gap-4 pb-5 place-self-center justify-center">
                             <a className="rounded-full bg-transparent border-white border-2 p-4">
                                 <FaFacebook className="text-white text-2xl" />
